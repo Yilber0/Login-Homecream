@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="helado.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos a 🍦HOMECREAM🍦</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-background: #070049;
+            --color-primary: #001aff;
+            --color-secondary: #345fec;
+            --color-text: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://images8.alphacoders.com/373/373000.jpg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .ventana-bienvenida {
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: 700px;
+    font-size: 20px;
+    margin: 40px 0 40px 40px;
+    margin-left: 0;
+    background-color: rgba(1, 1, 10, 0.7);  
+    
+      }
+
+        .ventana-bienvenida h3 {
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: antiquewhite;
+        }
+
+        .formulario {
+            margin-top: 20px;
+        }
+
+        .formulario label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #3601c7;
+            text-align: initial;
+        }
+
+        .formulario label i {
+            margin-right: 10px;
+        }
+
+        .formulario input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .formulario input:hover {
+        transform: scale(1.05);
+       }
+       .formulario:hover label {
+        color: #0051ff;
+        transition: color 0.3s ease;
+      }
+
+        .formulario button {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            background-color: #070049;
+            color: #00aeff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .formulario button:hover {
+
+            box-shadow: 0 0 20px rgba(34, 3, 145, 0.3);
+            background-color: #001aff;
+            transform: scale(1.1);
+            background-color: #2f00ff;
+            color: #00c3ff;
+        }
+
+        .ventana-bienvenida :hover {
+            text-align: center;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+            color: #45009e;
+        }
+
+        .ventana-bienvenida h3 {
+            color: #45009e;
+            font-size: 40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #0400ff;
+            transition: transform 0.3s ease;
+        }
+
+        .ventana-bienvenida h3:hover {
+            transform: scale(1.1);
+            color: #345fec;
+        }
+
+        .ventana-bienvenida h4:hover {
+            transform: scale(1.1);
+            color: #345fec;
+        }
+        .ventana-bienvenida h4 img:hover {
+        transform: rotate(10deg);
+        transition: transform 0.3s ease;
+       }
+       .formulario button:active {
+        background-color: #1b3e8a;
+        transform: scale(0.9);
+     }
+     .formulario input:focus {
+        border: 2px solid #00aeff;
+        outline: none;
+     }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="ventana-bienvenida">
+        <h3>Bienvenido a HOMECREAM</h3>
+        <h4> <img src="image.png" width="180" height="230"></h4>
+
+        <p style="color: rgb(4, 0, 255);">Por favor, ingresa tus datos:</p>
+
+        <div class="formulario">
+            <label for="nombre"><i class="fas fa-user"></i>Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+            <label for="correo"><i class="fas fa-envelope"></i>Correo electrónico:</label>
+            <input type="email" id="correo" placeholder="Ingresa tu correo electrónico">
+
+            <!--- ingresar -->
+            <button onclick="ingresar(document.getElementById('nombre').value)">Ingresar</button>
+        </div>
+    </div>
+
+    <script>
+        function ingresar(nombre) {
+            alert('Bienvenido ' + nombre + ' a nuestra tienda online.');
+
+            // Redireccionar página
+            window.location.href = 'https://yilbercode.github.io/yilbercode/';
+        }
+
+        // datos almacenados
+        window.onload = function () {
+            var nombreAlmacenado = localStorage.getItem('nombre');
+            var correoAlmacenado = localStorage.getItem('correo');
+
+            if (nombreAlmacenado && correoAlmacenado) {
+                document.getElementById('nombre').value = nombreAlmacenado;
+                document.getElementById('correo').value = correoAlmacenado;
+            }
+        };
+    </script>
+</body>
+</html>
